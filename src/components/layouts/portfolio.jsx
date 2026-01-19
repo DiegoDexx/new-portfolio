@@ -11,7 +11,8 @@ export default function Portfolio() {
       <div className="container-main">
         <SectionNav value={tab} onChange={setTab} />
 
-        <div className="mt-6 w-[70%]">
+       <div className="mt-6 w-full lg:w-[75%]">
+
           <div className="portfolio-panel p-6 sm:p-8 rounded-3xl">
             {tab === "projects" && <ProjectsList />}
             {tab === "skills" && <SkillsList />}

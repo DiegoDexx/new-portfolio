@@ -126,8 +126,9 @@ i18n
           // 🔹 NUEVO BLOQUE: Servicios 🔹
           "services": {
             "title": "Mis Servicios",
-            "service_1_name": "Sitio Web Básico - Corporativo - Portafolio",
+            "service_1_name": "Sitio Web Básico ",
             "service_1_desc": "Desarrollo de sitios web corporativos o portafolios con diseño moderno, adaptable y mantenimiento incluido.",
+            "service_1_features": "Actualizaciones de seguridad, copias de seguridad regulares, optimización del rendimiento y soporte técnico.",
             "service_2_name": "Tienda Online sin Integración de Usuarios (Tienda Básica / Shopify)",
             "service_2_desc": "Creación de tiendas online básicas utilizando Shopify o plataformas similares, sin integración de usuarios.",
             "service_3_name": "Tienda Online Avanzada o Sitio Corporativo con Integración de Usuarios y SEO",
