@@ -4,19 +4,10 @@ import Home from "./pages/home";
 
 export default function App() {
   return (
-      <div className="min-h-screen bg-light text-black dark:bg-dark dark:text-white">
-
-
-
-    <Routes>  
-
+    <div className="min-h-screen transition-colors duration-300">
+      <Routes>
         <Route path="/" element={<Home />} />
-  
-  
-
-
-    </Routes>
-  
+      </Routes>
     </div>
   );
 }

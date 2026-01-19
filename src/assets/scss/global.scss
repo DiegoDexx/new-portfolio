@@ -17,21 +17,79 @@ html, body, #root {
   height: 100%;
 }
 
-/* TEMA GLOBAL */
 body {
-  margin: 0;
-  padding: 0;
-  font-family: "Poppins", sans-serif;
+  background: #ffffff;
+  color: #000;
+}
+
+.dark body {
+  background: #181827;
+  color: #fff;
+}
+
+body, input, button, textarea, select {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-.bg-light { background-color: #f9f9f9; }
-.bg-dark { background-color: #0f0f18; }
-.text-black { color: #000000; }
-.text-white { color: #ffffff; }
+header {
+  background: #ffffff;
+  color : #000;
+}
 
-.dark body { background: #0f0f18; color: #ffffff; }
+.dark header {
+  background: #181827;
+  color : #fff;
+}
+
+/* =========================
+   PROFILE CARD (colors only)
+   ========================= */
+
+.profile-card {
+  background: rgba(255, 255, 255, 0.10);
+  border: 1px solid rgba(0, 0, 0, 0.10);
+  color: #111;
+}
+
+.dark .profile-card {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #fff;
+}
+
+/* Avatar frame */
+.profile-avatar {
+  border: 3px solid #F6339A;
+}
+
+/* Online dot */
+.profile-online {
+  background: #00d26a;
+  border: 3px solid rgba(255, 255, 255, 0.85);
+}
+.dark .profile-online {
+  border-color: rgba(24, 24, 39, 0.85);
+}
+
+/* Social chips */
+.social-chip {
+  background: rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.10);
+  color: inherit;
+}
+
+.dark .social-chip {
+  background: rgba(255, 255, 255, 0.10);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+}
+
+.social-chip:hover {
+  filter: brightness(1.05);
+}
 
 /* UTILIDADES */
 .pointer { cursor: pointer; }
@@ -67,7 +125,8 @@ body {
 .card {
   @apply bg-white rounded-2xl shadow-lg p-6 relative overflow-visible transition-all duration-300;
 }
-.card { @apply bg-[#181827]; }
+
+
 
 .card-hover { @apply hover:shadow-xl hover:-translate-y-1; }
 
@@ -76,13 +135,12 @@ body {
 /* BOTONES */
 .btn { @apply px-5 py-2 rounded-lg font-medium cursor-pointer transition-all duration-300; }
 
-.btn-primary { @apply text-black hover:brightness-110; }
-.btn-primary { @apply text-white; }
-
-.btn-outline {
+.btn-outline { 
   @apply text-black font-medium px-5 py-2 border-0 hover:bg-yellow-400 cursor-pointer transition-all duration-300;
 }
-.btn-outline { @apply text-white; }
+
+
+
 
 /* VIEW TRANSITIONS */
 ::view-transition-old(root),
