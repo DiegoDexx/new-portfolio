@@ -16,6 +16,7 @@ i18n
           "menuTitle5": "MY SERVICES",
           "downloadCV": "Download CV",
 
+          "Technical Skills": "Technical Skills",
           "subtitle3": "Professional Experience",
           "subtitle4": "Other Experience",
 
@@ -96,6 +97,7 @@ i18n
           "menuTitle4": "OTROS",
           "menuTitle5": "MIS SERVICIOS",
             "downloadCV": "Descargar CV",
+          "Technical Skills": "Habilidades Técnicas",
 
           "subtitle3": "Experiencia Profesional",
           "subtitle4": "Otras Experiencias",

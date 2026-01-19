@@ -1,5 +1,6 @@
 import NavBar from "../components/layouts/navbar";
 import Profile from "../components/layouts/profile";
+import Portfolio from "../components/layouts/portfolio";
 
 function Home() {
 
@@ -8,6 +9,7 @@ function Home() {
         <>
         <NavBar />
         <Profile />
+        <Portfolio />
         </>
 
 
