@@ -45,19 +45,99 @@ i18n
           },
 
           // 🔹 NUEVO BLOQUE: Servicios 🔹
-          "services": {
-            "title": "My Services",
-            "service_1_name": "Basic Website - Corporate - Portfolio",
-            "service_1_desc": "Development of corporate or portfolio websites with a modern, responsive design and included maintenance.",
-            "service_2_name": "Online Store without User Integration (Basic Store / Shopify)",
-            "service_2_desc": "Creation of basic online stores using Shopify or similar platforms, without user integration.",
-            "service_3_name": "Advanced Online Store or Corporate Website with User Integration and SEO",
-            "service_3_desc": "Development of websites or online stores with database integration, user management, and SEO implementation.",
-            "service_4_name": "Ongoing Maintenance",
-            "service_4_desc": "Includes optimization, new integrations, and continuous technical support.",
-            "service_5_name": "E-commerce Maintenance & SEO Package",
-            "service_5_desc": "Combined maintenance for e-commerce and advanced SEO services to optimize site performance and visibility."
-          },
+        "services": {
+            "devTitle": "Project Development",
+            "devSubtitle": "Choose the plan that best fits your project",
+            "maintenanceTitle": "Maintenance Plans",
+            "maintenanceSubtitle": "Keep your website always updated and running smoothly",
+            "note": "Note: All plans include a free SSL certificate and technical support during business hours. Maintenance plans require a minimum 3-month contract.",
+
+            "dev": {
+              "basic": {
+                "name": "Basic",
+                "badge": "",
+                "desc": "Shopify One-Product Store or Landing Page",
+                "price": "100–150€",
+                "features": [
+                  "Responsive design",
+                  "1 main page",
+                  "Basic optimization",
+                  "Contact form"
+                ]
+              },
+              "pro": {
+                "name": "Professional",
+                "badge": "",
+                "desc": "Corporate website or standard online store",
+                "price": "200–450€",
+                "features": [
+                  "Everything in Basic",
+                  "Up to 10 pages",
+                  "Admin panel",
+                  "Social media integration",
+                  "Basic SEO"
+                ]
+              },
+              "enterprise": {
+                "name": "Enterprise",
+                "badge": "",
+                "desc": "Advanced website with SEO + Database & CRM",
+                "price": "500€+",
+                "features": [
+                  "Everything in Professional",
+                  "Unlimited pages",
+                  "Advanced SEO & optimization",
+                  "Custom database",
+                  "CRM integration",
+                  "APIs & third-party integrations"
+                ]
+              }
+            },
+
+            "maintenance": {
+              "monthly": "Monthly",
+              "popular": "Popular",
+              "select": "Select",
+              "perMonth": "/month",
+
+              "basic": {
+                "name": "Basic",
+                "price": "30€",
+                "features": [
+                  "Security updates",
+                  "Monthly backup",
+                  "Email support",
+                  "1 hour of minor changes"
+                ]
+              },
+              "pro": {
+                "name": "Professional",
+                "price": "70€",
+                "features": [
+                  "Everything in Basic",
+                  "Weekly backup",
+                  "Priority support 24/7",
+                  "3 hours of monthly changes",
+                  "Performance monitoring",
+                  "Monthly SEO optimization"
+                ]
+              },
+              "premium": {
+                "name": "Premium",
+                "price": "150€",
+                "features": [
+                  "Everything in Professional",
+                  "Daily automatic backup",
+                  "Dedicated support 24/7",
+                  "10 hours of monthly development",
+                  "Monthly analysis & reports",
+                  "Advanced optimization",
+                  "New features"
+                ]
+              }
+            }
+          }
+          ,
 
           
           "contact_form": {
@@ -124,19 +204,97 @@ i18n
           },
 
           // 🔹 NUEVO BLOQUE: Servicios 🔹
-          "services": {
-            "title": "Mis Servicios",
-            "service_1_name": "Sitio Web Básico ",
-            "service_1_desc": "Desarrollo de sitios web corporativos o portafolios con diseño moderno, adaptable y mantenimiento incluido.",
-            "service_1_features": "Actualizaciones de seguridad, copias de seguridad regulares, optimización del rendimiento y soporte técnico.",
-            "service_2_name": "Tienda Online sin Integración de Usuarios (Tienda Básica / Shopify)",
-            "service_2_desc": "Creación de tiendas online básicas utilizando Shopify o plataformas similares, sin integración de usuarios.",
-            "service_3_name": "Tienda Online Avanzada o Sitio Corporativo con Integración de Usuarios y SEO",
-            "service_3_desc": "Desarrollo de sitios web o tiendas online con integración de base de datos, gestión de usuarios y SEO.",
-            "service_4_name": "Mantenimiento Continuo",
-            "service_4_desc": "Incluye optimización, nuevas integraciones y soporte técnico continuo.",
-            "service_5_name": "Paquete de Mantenimiento y SEO para E-commerce",
-            "service_5_desc": "Mantenimiento combinado para e-commerce y servicios SEO avanzados para optimizar el rendimiento y visibilidad del sitio."
+       "services": {
+            "devTitle": "Desarrollo de Proyectos",
+            "devSubtitle": "Elige el plan que mejor encaje con tu proyecto",
+            "maintenanceTitle": "Planes de Mantenimiento",
+            "maintenanceSubtitle": "Mantén tu web siempre actualizada y funcionando perfectamente",
+            "note": "Nota: Todos los planes incluyen certificado SSL gratuito y soporte técnico durante horario laboral. Los planes de mantenimiento requieren contratación mínima de 3 meses.",
+
+            "dev": {
+              "basic": {
+                "name": "Básico",
+                "badge": "",
+                "desc": "Tienda Shopify One-Product o Landing Page",
+                "price": "100–150€",
+                "features": [
+                  "Diseño responsivo",
+                  "1 página principal",
+                  "Optimización básica",
+                  "Formulario de contacto"
+                ]
+              },
+              "pro": {
+                "name": "Profesional",
+                "badge": "",
+                "desc": "Web corporativa o tienda normal",
+                "price": "200–450€",
+                "features": [
+                  "Todo lo del plan Básico",
+                  "Hasta 10 páginas",
+                  "Panel de administración",
+                  "Integración redes sociales",
+                  "SEO básico"
+                ]
+              },
+              "enterprise": {
+                "name": "Enterprise",
+                "badge": "",
+                "desc": "Web avanzada con SEO + BBDD y CRM",
+                "price": "+500€",
+                "features": [
+                  "Todo lo del plan Profesional",
+                  "Páginas ilimitadas",
+                  "SEO avanzado y optimización",
+                  "Base de datos personalizada",
+                  "Integración CRM",
+                  "APIs e integraciones de terceros"
+                ]
+              }
+            },
+
+            "maintenance": {
+              "monthly": "Mensual",
+              "popular": "Popular",
+              "select": "Seleccionar",
+              "perMonth": "/mes",
+
+              "basic": {
+                "name": "Básico",
+                "price": "30€",
+                "features": [
+                  "Actualizaciones de seguridad",
+                  "Backup mensual",
+                  "Soporte por email",
+                  "1 hora de cambios menores"
+                ]
+              },
+              "pro": {
+                "name": "Profesional",
+                "price": "70€",
+                "features": [
+                  "Todo lo del plan Básico",
+                  "Backup semanal",
+                  "Soporte prioritario 24/7",
+                  "3 horas de cambios mensuales",
+                  "Monitoreo de rendimiento",
+                  "Optimización SEO mensual"
+                ]
+              },
+              "premium": {
+                "name": "Premium",
+                "price": "150€",
+                "features": [
+                  "Todo lo del plan Profesional",
+                  "Backup diario automático",
+                  "Soporte dedicado 24/7",
+                  "10 horas de desarrollo mensual",
+                  "Análisis y reportes mensuales",
+                  "Optimización avanzada",
+                  "Nuevas funcionalidades"
+                ]
+              }
+            }
           },
 
            "contact_form": {

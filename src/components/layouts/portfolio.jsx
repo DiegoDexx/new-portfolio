@@ -2,6 +2,7 @@ import { useState } from "react";
 import SectionNav from "../ui/sectionNav";
 import ProjectsList from "../ui/projectList";
 import SkillsList from "../ui/skillList";
+import ServiceList from "../ui/serviceList";
 
 export default function Portfolio() {
   const [tab, setTab] = useState("projects");
@@ -16,7 +17,7 @@ export default function Portfolio() {
           <div className="portfolio-panel p-6 sm:p-8 rounded-3xl">
             {tab === "projects" && <ProjectsList />}
             {tab === "skills" && <SkillsList />}
-
+            {tab === "services" && <ServiceList />}
           </div>
         </div>
       </div>
