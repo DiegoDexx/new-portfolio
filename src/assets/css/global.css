@@ -1,0 +1,164 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800;900&display=swap");
+@reference "tailwindcss";
+/* RESET */
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+/* TEMA GLOBAL */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.bg-light {
+  background-color: #f9f9f9;
+}
+
+.bg-dark {
+  background-color: #0f0f18;
+}
+
+.text-black {
+  color: #000000;
+}
+
+.text-white {
+  color: #ffffff;
+}
+
+.dark body {
+  background: #0f0f18;
+  color: #ffffff;
+}
+
+/* UTILIDADES */
+.pointer {
+  cursor: pointer;
+}
+
+/* LAYOUT SYSTEM */
+.container-main {
+  @apply w-full mx-auto px-4 sm:px-6 lg:px-8 xl:px-12;
+  width: min(92vw, 1320px);
+}
+
+.container-md {
+  @apply w-full mx-auto px-4 md:px-6;
+  max-width: 1200px;
+}
+
+.container-sm {
+  @apply w-full mx-auto px-4;
+  max-width: 800px;
+}
+
+/* HELPERS */
+.flex-center {
+  @apply flex items-center justify-center;
+}
+
+.flex-between {
+  @apply flex items-center justify-between;
+}
+
+.flex-col-center {
+  @apply flex flex-col items-center justify-center;
+}
+
+.flex-col-between {
+  @apply flex flex-col items-center justify-between;
+}
+
+.no-decoration {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* CARDS */
+.card {
+  @apply bg-white rounded-2xl shadow-lg p-6 relative overflow-visible transition-all duration-300;
+}
+
+.card {
+  @apply bg-[#181827];
+}
+
+.card-hover {
+  @apply hover:shadow-xl hover:-translate-y-1;
+}
+
+.icon-box {
+  @apply p-3 rounded-xl flex items-center justify-center;
+}
+
+/* BOTONES */
+.btn {
+  @apply px-5 py-2 rounded-lg font-medium cursor-pointer transition-all duration-300;
+}
+
+.btn-primary {
+  @apply text-black hover:brightness-110;
+}
+
+.btn-primary {
+  @apply text-white;
+}
+
+.btn-outline {
+  @apply text-black font-medium px-5 py-2 border-0 hover:bg-yellow-400 cursor-pointer transition-all duration-300;
+}
+
+.btn-outline {
+  @apply text-white;
+}
+
+/* VIEW TRANSITIONS */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 320ms;
+  animation-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+::view-transition-old(root) {
+  animation-name: vt-slide-out;
+}
+
+::view-transition-new(root) {
+  animation-name: vt-slide-in;
+}
+
+@keyframes vt-slide-out {
+  from {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(-18px) scale(0.98);
+    opacity: 0;
+  }
+}
+@keyframes vt-slide-in {
+  from {
+    transform: translateX(18px) scale(0.98);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+  }
+}
+
+/*# sourceMappingURL=global.css.map */
