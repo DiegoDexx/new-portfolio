@@ -1,12 +1,13 @@
 import { useTranslation } from "react-i18next";
 import { FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa";
+import image from "../../../public/images/profile.jpg";
 
 export default function Profile() {
   const { t } = useTranslation();
 
   const name = "Diego Alejandro";
   const email = "diegojspro@gmail.com";
-  const avatarSrc = "/images/profile.jpg"; // <-- pon tu ruta real (public/...)
+  const avatarSrc = image; 
 
   return (
     <section className="container-main my-12">
@@ -36,7 +37,7 @@ export default function Profile() {
           </div>
 
           {/* Online dot */}
-          <span className="profile-online absolute -bottom-2 -right-2 w-6 h-6 rounded-full" />
+          <span className="profile-online absolute -bottom-2 -right-2 w-7 h-7 rounded-full z-10" />
         </div>
 
         {/* Content */}

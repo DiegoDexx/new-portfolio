@@ -100,11 +100,16 @@ header {
 /* Online dot */
 .profile-online {
   background: #00d26a;
-  border: 3px solid rgba(255, 255, 255, 0.85);
+  border: 3px solid #ffffff; /* aro blanco constante */
+  /* aro externo sutil para simular el halo de la imagen */
+  box-shadow: 0 0 0 8px rgba(255, 255, 255, 0.7), 0 6px 16px rgba(0, 0, 0, 0.2);
+  z-index: 10; /* asegurar superposición sobre el avatar */
 }
 
+/* En modo dark mantenemos el aro blanco para que siempre destaque */
 .dark .profile-online {
-  border-color: rgba(24, 24, 39, 0.85);
+  border-color: #ffffff;
+  z-index: 10;
 }
 
 /* Social chips */
