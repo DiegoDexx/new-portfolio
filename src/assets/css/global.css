@@ -1,9 +1,12 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800;900&display=swap");
 @reference "tailwindcss";
 /* RESET */
 html {
   box-sizing: border-box;
   scroll-behavior: smooth;
+  /* Tipografía base fluida */
+  font-size: clamp(15px, 0.25vw + 15px, 17px);
 }
 
 *, *::before, *::after {
@@ -24,11 +27,6 @@ body {
 .dark body {
   background: #181827;
   color: #fff;
-}
-
-/* Tipografía base fluida */
-html {
-  font-size: clamp(15px, 0.25vw + 15px, 17px);
 }
 
 body, input, button, textarea, select {
@@ -103,8 +101,8 @@ header {
 /* LAYOUT SYSTEM */
 .container-main {
   @apply w-full mx-auto px-4 sm:px-6 lg:px-8 xl:px-12;
-  /* Evitar overflows por 100vw/scrollbar: usar porcentaje */
-  max-width: 1320px;
+  /* Evitar overflow por vw + scrollbar */
+  max-width: 1400px;
   width: 100%;
 }
 
@@ -125,7 +123,7 @@ header {
   padding: 14px 2px;
   font-weight: 800;
   letter-spacing: 0.04em;
-  font-size: 0.95rem;
+  font-size: clamp(0.85rem, 0.6vw + 0.75rem, 0.95rem);
   opacity: 0.6;
   text-transform: uppercase;
   position: relative;
@@ -284,7 +282,7 @@ header {
 .svc-badge {
   padding: 4px 10px;
   border-radius: 999px;
-  font-size: 12px;
+  font-size: 8px;
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.12);
 }
@@ -352,7 +350,6 @@ header {
   font-weight: 900;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  /* tamaño fluido */
   font-size: clamp(0.85rem, 0.6vw + 0.75rem, 0.95rem);
   opacity: 0.5;
 }
@@ -384,6 +381,44 @@ header {
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.1);
   font-size: clamp(10px, 0.5vw + 9px, 12px);
+}
+
+/* =========================
+   SERVICES visual (gradients + sizes)
+   ========================= */
+.svc-card,
+.svc-maint {
+  /* Suave sombra para separar del fondo */
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* Gradientes por tono */
+.svc-card--pink,
+.svc-maint--pink {
+  background: linear-gradient(180deg, rgba(246, 51, 154, 0.14) 0%, rgba(246, 51, 154, 0.06) 100%);
+}
+
+.svc-card--purple,
+.svc-maint--purple {
+  background: linear-gradient(180deg, rgba(168, 85, 247, 0.16) 0%, rgba(168, 85, 247, 0.07) 100%);
+}
+
+.svc-card--blue,
+.svc-maint--blue {
+  background: linear-gradient(180deg, rgba(59, 130, 246, 0.16) 0%, rgba(59, 130, 246, 0.07) 100%);
+}
+
+/* Títulos y precio más protagonistas */
+.svc-card h4,
+.svc-maint h4 {
+  font-size: clamp(1.1rem, 0.6vw + 1rem, 1.4rem);
+  font-weight: 500;
+}
+
+.svc-price {
+  font-size: clamp(1.2rem, 1.2vw + 1rem, 1.4rem);
+  line-height: 1.1;
+  font-weight: 700;
 }
 
 /* HELPERS */
@@ -467,6 +502,41 @@ header {
   to {
     transform: translateX(0) scale(1);
     opacity: 1;
+  }
+}
+/* Estilos para el componente ServiceList */
+.svc-card {
+  background-color: #f9f9f9;
+  border: 1px solid #e0e0e0;
+  transition: background-color 0.3s;
+}
+
+.svc-card:hover {
+  background-color: #f1f1f1;
+}
+
+.svc-check {
+  color: #4caf50;
+}
+
+.svc-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.svc-dot--pink {
+  background-color: #e91e63;
+}
+
+.svc-dot--blue {
+  background-color: #2196f3;
+}
+
+/* Responsividad */
+@media (max-width: 640px) {
+  .svc-card {
+    padding: 1.5rem;
   }
 }
 

@@ -3,7 +3,7 @@ import { FaCheck } from "react-icons/fa";
 
 function FeatureItem({ children, tone = "pink" }) {
   return (
-    <li className="flex items-start gap-3 text-sm sm:text-[15px] leading-relaxed opacity-90">
+    <li className="flex items-start gap-3 text-sm sm:text-[12px] leading-relaxed opacity-90">
       <span className={`svc-check svc-check--${tone} mt-[2px]`}>
         <FaCheck />
       </span>
@@ -14,19 +14,19 @@ function FeatureItem({ children, tone = "pink" }) {
 
 function DevPlanCard({ name, desc, price, features, tone }) {
   return (
-    <div className={`svc-card svc-card--${tone} rounded-2xl p-6 sm:p-7 hover-scale transition-transform duration-200`}>
+    <div className={`svc-card svc-card--${tone} rounded-2xl p-5 sm:p-6 hover-scale transition-transform duration-200`}>
       <div className="flex items-center gap-2">
         <span className={`svc-dot svc-dot--${tone}`} />
-        <h4 className="text-lg font-extrabold">{name}</h4>
+        <h4 className="text-lg font-medium">{name}</h4>
       </div>
 
-      <p className="mt-3 text-sm opacity-80">{desc}</p>
+      <p className="mt-2 text-sm opacity-75">{desc}</p>
 
-      <div className="mt-6 svc-price font-extrabold tracking-tight">
+      <div className="mt-5 svc-price font-bold tracking-tight">
         {price}
       </div>
 
-      <ul className="mt-6 flex flex-col gap-3">
+      <ul className="mt-5 flex flex-col gap-2.5">
         {features.map((f, idx) => (
           <FeatureItem key={idx} tone={tone}>
             {f}
@@ -39,7 +39,7 @@ function DevPlanCard({ name, desc, price, features, tone }) {
 
 function MaintCard({ name, price, monthly, perMonth, features, tone, popular, selectText }) {
   return (
-    <div className={`svc-maint svc-maint--${tone} rounded-2xl p-6 sm:p-7 hover-scale transition-transform duration-200`}>
+    <div className={`svc-card svc-card--${tone} rounded-2xl p-5 sm:p-6 hover-scale transition-transform duration-200`}>
       {popular && (
         <div className="svc-popular">
           {popular}
@@ -47,16 +47,16 @@ function MaintCard({ name, price, monthly, perMonth, features, tone, popular, se
       )}
 
       <div className="flex items-center justify-between gap-3">
-        <h4 className="text-lg font-extrabold">{name}</h4>
+        <h4 className="text-lg font-medium">{name}</h4>
         <span className={`svc-badge svc-badge--${tone}`}>{monthly}</span>
       </div>
 
-      <div className="mt-4 flex items-end gap-1">
-        <div className="svc-price font-extrabold">{price}</div>
-        <div className="text-sm opacity-70">{perMonth}</div>
+      <div className="mt-3 flex items-end gap-1">
+        <div className="svc-price font-bold">{price}</div>
+        <div className="text-sm opacity-65">{perMonth}</div>
       </div>
 
-      <ul className="mt-6 flex flex-col gap-3">
+      <ul className="mt-5 flex flex-col gap-2.5">
         {features.map((f, idx) => (
           <FeatureItem key={idx} tone={tone}>
             {f}
@@ -66,10 +66,27 @@ function MaintCard({ name, price, monthly, perMonth, features, tone, popular, se
 
       <button
         type="button"
-        className={`svc-select svc-select--${tone} mt-7 w-full rounded-xl py-3 text-sm font-extrabold`}
+        className={`svc-select svc-select--${tone} mt-6 w-full rounded-xl py-3 text-sm font-semibold`}
       >
         {selectText}
       </button>
+    </div>
+  );
+}
+
+function ServiceList({ services }) {
+  return (
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 xl:gap-6">
+      {services.map((service) => (
+        <DevPlanCard 
+          key={service.id}
+          name={service.name}
+          desc={service.desc}
+          price={service.price}
+          features={service.features}
+          tone={service.tone}
+        />
+      ))}
     </div>
   );
 }
@@ -126,31 +143,17 @@ export default function Services() {
   };
 
   return (
-    <div className="flex flex-col gap-10">
+    <div className="flex flex-col gap-10 ">
       {/* DEV */}
       <section>
-        <h3 className="text-2xl sm:text-3xl font-extrabold">
-          {t("services.devTitle")}
-        </h3>
-        <p className="mt-2 text-sm sm:text-base opacity-75">
-          {t("services.devSubtitle")}
-        </p>
+      
 
-        <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-5">
-          <DevPlanCard {...dev.basic} />
-          <DevPlanCard {...dev.pro} />
-          <DevPlanCard {...dev.enterprise} />
-        </div>
+        <ServiceList services={[dev.basic, dev.pro, dev.enterprise]} />
       </section>
 
       {/* MAINTENANCE */}
       <section className="svc-panel rounded-3xl p-6 sm:p-8">
-        <h3 className="text-2xl sm:text-3xl font-extrabold">
-          {t("services.maintenanceTitle")}
-        </h3>
-        <p className="mt-2 text-sm sm:text-base opacity-75">
-          {t("services.maintenanceSubtitle")}
-        </p>
+      
 
         <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-5">
           <MaintCard
