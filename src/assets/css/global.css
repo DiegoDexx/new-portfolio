@@ -408,6 +408,22 @@ header {
   background: linear-gradient(180deg, rgba(59, 130, 246, 0.16) 0%, rgba(59, 130, 246, 0.07) 100%);
 }
 
+/* Dark mode - no gradients */
+.dark .svc-card--pink,
+.dark .svc-maint--pink {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.dark .svc-card--purple,
+.dark .svc-maint--purple {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.dark .svc-card--blue,
+.dark .svc-maint--blue {
+  background: rgba(255, 255, 255, 0.04);
+}
+
 /* Títulos y precio más protagonistas */
 .svc-card h4,
 .svc-maint h4 {
