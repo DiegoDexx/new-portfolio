@@ -10,18 +10,20 @@ export default function Profile() {
 
   return (
     <section className="container-main my-12">
-      <div
-        className="
-          profile-card
-          w-full
-          rounded-3xl
-          px-6 py-8
-          sm:px-10 sm:py-10
-          flex flex-col md:flex-row
-          items-start md:items-center
-          gap-6 md:gap-10
-        "
-      >
+<div
+  className="
+    w-full
+    rounded-3xl
+    px-6 py-8 sm:px-10 sm:py-10
+    flex flex-col md:flex-row gap-6 md:gap-10
+
+    bg-white/10 dark:bg-white/5
+    border border-white/10
+    shadow-[0_25px_60px_-15px_rgba(0,0,0,0.45)]
+    transition
+  " 
+>
+
         {/* Avatar */}
         <div className="relative shrink-0">
           <div className="profile-avatar rounded-2xl overflow-hidden w-28 h-28 sm:w-32 sm:h-32">
@@ -43,7 +45,7 @@ export default function Profile() {
             {name}
           </h1>
 
-          <p className="mt-4 text-base sm:text-lg leading-relaxed opacity-90">
+          <p className="mt-4 text-sm sm:text-lg leading-relaxed opacity-90">
             {t("intro")}
           </p>
 

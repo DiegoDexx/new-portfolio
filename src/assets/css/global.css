@@ -145,16 +145,6 @@ header {
 /* =========================
    PORTFOLIO PANEL (colors)
    ========================= */
-.portfolio-panel {
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-}
-
-.dark .portfolio-panel {
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
 /* =========================
    PROJECT CARD (colors)
    ========================= */
@@ -170,8 +160,8 @@ header {
 
 .project-btn {
   border: 2px solid rgba(255, 255, 255, 0.18);
-  background: rgba(255, 255, 255, 0.06);
-  color: inherit;
+  background: #F6339A;
+  color: white;
 }
 
 .project-btn:hover {
@@ -339,6 +329,53 @@ header {
   filter: brightness(1.05);
 }
 
+/* =========================
+   EXPERIENCE PANEL (colors only)
+   ========================= */
+.exp-card {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: inherit;
+}
+
+/* Tabs */
+.exp-tab {
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-size: 0.95rem;
+  opacity: 0.5;
+}
+
+.exp-tab.is-active {
+  opacity: 1;
+}
+
+/* Timeline accent line */
+.exp-line {
+  position: absolute;
+  left: 6px;
+  top: 6px;
+  bottom: -6px;
+  width: 2px;
+  background: #F6339A;
+  border-radius: 999px;
+  opacity: 0.9;
+}
+
+/* Small icon chip */
+.exp-icon {
+  width: 18px;
+  height: 18px;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 12px;
+}
+
 /* HELPERS */
 .flex-center {
   @apply flex items-center justify-center;
@@ -381,6 +418,10 @@ header {
 
 .btn-outline {
   @apply text-black font-medium px-5 py-2 border-0 hover:bg-yellow-400 cursor-pointer transition-all duration-300;
+}
+
+.hover-scale {
+  @apply scale-100 hover:scale-105 transition-transform duration-300;
 }
 
 /* VIEW TRANSITIONS */

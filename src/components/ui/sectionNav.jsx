@@ -23,7 +23,7 @@ export default function SectionNav({ value, onChange }) {
               key={tab.key}
               type="button"
               onClick={() => onChange(tab.key)}
-              className={`section-nav__tab ${active ? "is-active" : ""}`}
+              className={`section-nav__tab ${active ? "is-active" : ""} py-3 pb-2 text-sm font-light cursor-pointer transition-all duration-300`}
             >
               {tab.label}
             </button>

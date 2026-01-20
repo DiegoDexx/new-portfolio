@@ -1,25 +1,29 @@
 import { useTranslation } from "react-i18next";
+import ariseImage from "../../../public/projects_imgs/arisewebsite-reservas.webp";
+import reformImage from "../../../public/projects_imgs/reformasitegrales.webp";
+import oryonImage from "../../../public/projects_imgs/oryonLabs.webp";
+
 
 const projects = [
   {
     id: 1,
     title: "ARISE WEBSITE",
     descKey: "proyects.description_1",
-    image: "/images/projects/arise.jpg",
+    image: ariseImage,
     href: "#",
   },
   {
     id: 2,
     title: "RENEWALS CORPORATIVE WEBSITE",
     descKey: "proyects.description_2",
-    image: "/images/projects/renewals.jpg",
+    image: reformImage,
     href: "#",
   },
   {
     id: 3,
     title: "ORYON LABS CORPORATIVE WEBSITE",
     descKey: "proyects.description_3",
-    image: "/images/projects/oryon.jpg",
+    image: oryonImage,
     href: "https://oryonlabs.net",
   },
 ];
@@ -28,11 +32,11 @@ export default function ProjectsList() {
   const { t } = useTranslation();
 
   return (
-    <div className="flex flex-col gap-6">
+    <div className="w-full flex flex-col gap-6">
       {projects.map((p) => (
         <article
           key={p.id}
-          className="project-card rounded-3xl p-5 sm:p-6 flex flex-col md:flex-row gap-5 sm:gap-6"
+          className="project-card rounded-3xl p-5 sm:p-6 flex flex-col md:flex-row gap-5 sm:gap-6 hover:shadow-lg transition-shadow hover-scale "
         >
           <div className="project-card__media rounded-2xl overflow-hidden w-full md:w-[320px] shrink-0">
             <img
@@ -57,7 +61,7 @@ export default function ProjectsList() {
                 href={p.href}
                 target={p.href.startsWith("http") ? "_blank" : undefined}
                 rel={p.href.startsWith("http") ? "noreferrer" : undefined}
-                className="project-btn inline-flex items-center justify-center px-6 py-2 rounded-xl text-sm font-semibold"
+                className="project-btn inline-flex items-center justify-center px-6 py-2 rounded-xl text-sm font-semibold hover-scale "
               >
                 {t("viewMore")}
               </a>

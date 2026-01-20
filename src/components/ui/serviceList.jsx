@@ -14,7 +14,7 @@ function FeatureItem({ children, tone = "pink" }) {
 
 function DevPlanCard({ name, desc, price, features, tone }) {
   return (
-    <div className={`svc-card svc-card--${tone} rounded-2xl p-6 sm:p-7`}>
+    <div className={`svc-card svc-card--${tone} rounded-2xl p-6 sm:p-7 hover-scale transition-transform duration-200`}>
       <div className="flex items-center gap-2">
         <span className={`svc-dot svc-dot--${tone}`} />
         <h4 className="text-lg font-extrabold">{name}</h4>
@@ -39,7 +39,7 @@ function DevPlanCard({ name, desc, price, features, tone }) {
 
 function MaintCard({ name, price, monthly, perMonth, features, tone, popular, selectText }) {
   return (
-    <div className={`svc-maint svc-maint--${tone} rounded-2xl p-6 sm:p-7`}>
+    <div className={`svc-maint svc-maint--${tone} rounded-2xl p-6 sm:p-7 hover-scale transition-transform duration-200`}>
       {popular && (
         <div className="svc-popular">
           {popular}
