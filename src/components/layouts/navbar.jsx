@@ -29,6 +29,7 @@ const NavBar = () => {
   return (
     <header
       className="
+      container-main
         sticky top-0 z-50
         bg-white/80 dark:bg-[#181827]/80
         text-black dark:text-white

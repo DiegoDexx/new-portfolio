@@ -68,6 +68,11 @@ header {
   color : #fff;
 }
 
+.dark select{
+  background: #181827;
+  color : #fff;
+}
+
 /* =========================
    PROFILE CARD (colors only)
    ========================= */
@@ -145,11 +150,11 @@ header {
   @media (min-width: 1280px) {
     padding-left: 3rem;    /* 48px portátiles 14-15" */
     padding-right: 3rem;
-    max-width: 1200px;     /* Ancho óptimo para 1280px */
+    max-width: 1400px;     /* Ancho óptimo para 1280px */
   }
   
   @media (min-width: 1366px) {
-    max-width: 1280px;     /* Ancho óptimo para 1366px */
+    max-width: 1480px;     /* Ancho óptimo para 1366px */
   }
   
   @media (min-width: 1536px) {
@@ -157,7 +162,7 @@ header {
   }
   
   @media (min-width: 1920px) {
-    max-width: 1600px;     /* Ancho óptimo para Full HD */
+    max-width: 1400px;     /* Ancho óptimo para Full HD */
   }
 }
 
@@ -476,6 +481,38 @@ header {
 
 .hover-scale{
   @apply scale-100 hover:scale-105 transition-transform duration-300;
+}
+
+/* =========================
+   FOOTER (theme + dark)
+   ========================= */
+
+
+.dark footer {
+  background: #181827; /* fondo principal dark */
+  color: rgba(255, 255, 255, 0.95);
+}
+
+/* Enlaces del footer */
+.dark footer a {
+  color: rgba(255, 255, 255, 0.92);
+  text-decoration: none;
+}
+.dark footer a:hover { opacity: 1; filter: brightness(1.05); }
+
+/* Chips de iconos (LinkedIn / GitHub / Email) */
+.dark footer a[aria-label] {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.90);
+}
+.dark footer a[aria-label]:hover {
+  background: rgba(255, 255, 255, 0.16);
+}
+
+/* Separador */
+.dark footer .border-t {
+  border-color: rgba(255, 255, 255, 0.12) !important;
 }
 
 

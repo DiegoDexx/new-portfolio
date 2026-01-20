@@ -4,6 +4,7 @@ import Profile from "../components/layouts/profile";
 import Portfolio from "../components/layouts/portfolio";
 import  SectionNav  from "../components/ui/sectionNav";
 import ExperiencePanel from "../components/layouts/experience";
+import Footer from "../components/layouts/footer";
 
 function Home() {
       const [tab, setTab] = useState("projects");
@@ -11,7 +12,7 @@ function Home() {
     <>
       <NavBar />
 
-      <section className="container-main pt-8 sm:pt-10">
+      <section className="container-main pt-5 sm:pt-10">
         <Profile />
       </section>
 
@@ -31,6 +32,8 @@ function Home() {
           </div>
         </div>
       </section>
+
+      <Footer />
     </>
   );
 }
