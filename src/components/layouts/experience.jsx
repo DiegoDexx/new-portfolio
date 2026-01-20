@@ -8,9 +8,9 @@ function TimelineItem({ title, company, date }) {
       {/* vertical accent */}
       <span className="exp-line" aria-hidden="true" />
 
-      <h4 className="font-extrabold text-base sm:text-lg">{title}</h4>
+      <h4 className="font-medium text-lg">{title}</h4>
 
-      <div className="mt-2 flex flex-col gap-1 text-xs sm:text-sm opacity-85">
+      <div className="mt-2 flex flex-col gap-1 text-sm opacity-85">
         <div className="flex items-center gap-2">
           <span className="exp-icon">
             <FaBriefcase />
@@ -78,13 +78,13 @@ export default function ExperiencePanel() {
       className="flex justify-center w-full my-8 sm:my-10 lg:my-12 bg-white/10 dark:bg-white/5 border border-white/10 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.45)] transition"
       id="experience"
     >
-      <div className="exp-card rounded-3xl p-5 sm:p-7 w-full max-w-[520px] lg:max-w-[420px]">
+      <div className="exp-card rounded-2xl p-5 sm:p-6 w-full max-w-[520px] lg:max-w-[420px]">
         {/* Header */}
         <div className="flex items-center justify-between">
           <button
             type="button"
             onClick={() => setTab("professional")}
-            className={`exp-tab text-xs sm:text-sm md:text-base ${tab === "professional" ? "is-active" : ""}`}
+            className={`exp-tab text-sm ${tab === "professional" ? "is-active" : ""}`}
           >
             {t("menuTitle3")}
           </button>
@@ -92,14 +92,14 @@ export default function ExperiencePanel() {
           <button
             type="button"
             onClick={() => setTab("other")}
-            className={`exp-tab text-xs sm:text-sm md:text-base ${tab === "other" ? "is-active" : ""}`}
+            className={`exp-tab text-sm ${tab === "other" ? "is-active" : ""}`}
           >
             {t("menuTitle4")}
           </button>
         </div>
 
         {/* Subtitle */}
-        <p className="mt-3 sm:mt-4 font-semibold opacity-90 text-sm sm:text-base">
+        <p className="mt-3 sm:mt-4 font-semibold opacity-75 text-sm">
           {tab === "professional" ? t("subtitle3") : t("subtitle4")}
         </p>
 

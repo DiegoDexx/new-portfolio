@@ -6,8 +6,28 @@
 html {
   box-sizing: border-box;
   scroll-behavior: smooth;
-  /* Tipografía base fluida */
-  font-size: clamp(15px, 0.25vw + 15px, 17px);
+  /* Tipografía base fluida optimizada por pantalla */
+  font-size: 15px; /* Móvil */
+  
+  @media (min-width: 768px) {
+    font-size: 15.5px; /* Tablets */
+  }
+  
+  @media (min-width: 1024px) {
+    font-size: 16px; /* Portátiles 13" */
+  }
+  
+  @media (min-width: 1280px) {
+    font-size: 16px; /* Portátiles 14-15" */
+  }
+  
+  @media (min-width: 1366px) {
+    font-size: 16.5px; /* Portátiles 15-17" */
+  }
+  
+  @media (min-width: 1920px) {
+    font-size: 17px; /* Full HD */
+  }
 }
 
 *, *::before, *::after {
@@ -99,10 +119,46 @@ header {
 
 /* LAYOUT SYSTEM */
 .container-main {
-  @apply w-full mx-auto px-4 sm:px-6 lg:px-8 xl:px-12;
-  /* Evitar overflow por vw + scrollbar */
-  max-width: 1400px;
+  @apply w-full mx-auto;
   width: 100%;
+  
+  /* Padding responsive optimizado */
+  padding-left: 1rem;   /* 16px móvil */
+  padding-right: 1rem;
+  
+  @media (min-width: 640px) {
+    padding-left: 1.5rem;  /* 24px móviles grandes */
+    padding-right: 1.5rem;
+  }
+  
+  @media (min-width: 768px) {
+    padding-left: 2rem;    /* 32px tablets */
+    padding-right: 2rem;
+  }
+  
+  @media (min-width: 1024px) {
+    padding-left: 2.5rem;  /* 40px portátiles 13" */
+    padding-right: 2.5rem;
+    max-width: 980px;      /* Ancho óptimo para 1024px */
+  }
+  
+  @media (min-width: 1280px) {
+    padding-left: 3rem;    /* 48px portátiles 14-15" */
+    padding-right: 3rem;
+    max-width: 1200px;     /* Ancho óptimo para 1280px */
+  }
+  
+  @media (min-width: 1366px) {
+    max-width: 1280px;     /* Ancho óptimo para 1366px */
+  }
+  
+  @media (min-width: 1536px) {
+    max-width: 1400px;     /* Ancho óptimo para 1536px */
+  }
+  
+  @media (min-width: 1920px) {
+    max-width: 1600px;     /* Ancho óptimo para Full HD */
+  }
 }
 
 .container-md {
@@ -120,7 +176,7 @@ header {
    ========================= */
 .section-nav__tab {
   padding: 14px 2px;
-  font-weight: 800;
+  font-weight: 600;
   letter-spacing: 0.04em;
   font-size: clamp(0.85rem, 0.6vw + 0.75rem, 0.95rem);
   opacity: 0.6;
