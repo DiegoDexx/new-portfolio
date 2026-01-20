@@ -7,11 +7,11 @@ export default function Portfolio({tab}) {
 
 
   return (
-    <section className=" flex justify-center w-full py-12 " id="portfolio">
+    <section className="flex justify-center w-full py-5 sm:py-6" id="portfolio">
  
-       <div className=" w-full  lg:w-[95%] ">
+       <div className="w-full lg:w-[95%]">
 
-          <div className="portfolio-panel p-6  sm:p-8 rounded-3xl">
+          <div className="portfolio-panel p-5 sm:p-7 rounded-3xl">
             {tab === "projects" && <ProjectsList />}
             {tab === "skills" && <SkillsList />}
             {tab === "services" && <ServiceList />}

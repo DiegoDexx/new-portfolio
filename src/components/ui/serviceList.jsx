@@ -22,7 +22,7 @@ function DevPlanCard({ name, desc, price, features, tone }) {
 
       <p className="mt-3 text-sm opacity-80">{desc}</p>
 
-      <div className="mt-6 text-3xl font-extrabold tracking-tight">
+      <div className="mt-6 svc-price font-extrabold tracking-tight">
         {price}
       </div>
 
@@ -52,7 +52,7 @@ function MaintCard({ name, price, monthly, perMonth, features, tone, popular, se
       </div>
 
       <div className="mt-4 flex items-end gap-1">
-        <div className="text-3xl font-extrabold">{price}</div>
+        <div className="svc-price font-extrabold">{price}</div>
         <div className="text-sm opacity-70">{perMonth}</div>
       </div>
 

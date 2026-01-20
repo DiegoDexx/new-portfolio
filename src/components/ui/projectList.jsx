@@ -36,23 +36,23 @@ export default function ProjectsList() {
       {projects.map((p) => (
         <article
           key={p.id}
-          className="project-card rounded-3xl p-5 sm:p-6 flex flex-col md:flex-row gap-5 sm:gap-6 hover:shadow-lg transition-shadow hover-scale "
+          className="project-card rounded-3xl p-5 sm:p-6 flex flex-col md:flex-row gap-5 sm:gap-6 hover:shadow-lg transition-shadow hover-scale"
         >
-          <div className="project-card__media rounded-2xl overflow-hidden w-full md:w-[320px] shrink-0">
+          <div className="project-card__media rounded-2xl overflow-hidden w-full md:w-[320px] shrink-0 aspect-[16/10] md:aspect-[16/9]">
             <img
               src={p.image}
               alt={p.title}
-              className="w-full h-[180px] md:h-[170px] object-cover"
+              className="w-full h-full object-cover"
               loading="lazy"
             />
           </div>
 
           <div className="flex-1 min-w-0">
-            <h3 className="text-lg sm:text-xl font-extrabold tracking-wide">
+            <h3 className="text-base sm:text-lg font-extrabold tracking-wide">
               {p.title}
             </h3>
 
-            <p className="mt-2 text-sm sm:text-base opacity-85">
+            <p className="mt-2 text-sm sm:text-[15px] opacity-85">
               {t(p.descKey)}
             </p>
 

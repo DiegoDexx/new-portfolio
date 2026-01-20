@@ -17,6 +17,8 @@ html, body, #root {
 body {
   background: #ffffff;
   color: #000;
+  /* Evitar barras horizontales accidentales */
+  overflow-x: clip;
 }
 
 .dark body {
@@ -24,10 +26,15 @@ body {
   color: #fff;
 }
 
+/* Tipografía base fluida */
+html {
+  font-size: clamp(15px, 0.25vw + 15px, 17px);
+}
+
 body, input, button, textarea, select {
   font-family: "Poppins", sans-serif;
-  font-size: 16px;
-  line-height: 1.5;
+  font-size: 1rem; /* hereda del html para ser fluido */
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -96,7 +103,9 @@ header {
 /* LAYOUT SYSTEM */
 .container-main {
   @apply w-full mx-auto px-4 sm:px-6 lg:px-8 xl:px-12;
-  width: min(92vw, 1320px);
+  /* Evitar overflows por 100vw/scrollbar: usar porcentaje */
+  max-width: 1320px;
+  width: 100%;
 }
 
 .container-md {
@@ -343,7 +352,8 @@ header {
   font-weight: 900;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  font-size: 0.95rem;
+  /* tamaño fluido */
+  font-size: clamp(0.85rem, 0.6vw + 0.75rem, 0.95rem);
   opacity: 0.5;
 }
 
@@ -354,9 +364,9 @@ header {
 /* Timeline accent line */
 .exp-line {
   position: absolute;
-  left: 6px;
-  top: 6px;
-  bottom: -6px;
+  left: 3px;
+  top: 2px;
+  bottom: -2px;
   width: 2px;
   background: #F6339A;
   border-radius: 999px;
@@ -365,15 +375,15 @@ header {
 
 /* Small icon chip */
 .exp-icon {
-  width: 18px;
-  height: 18px;
+  width: clamp(16px, 1.3vw, 18px);
+  height: clamp(16px, 1.3vw, 18px);
   border-radius: 6px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  font-size: 12px;
+  font-size: clamp(10px, 0.5vw + 9px, 12px);
 }
 
 /* HELPERS */

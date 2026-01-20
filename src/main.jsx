@@ -9,6 +9,8 @@ import "./assets/css/global.css";
 
 
 
+// Inicializa i18n antes de renderizar la app
+import "./i118n.js";
 
 
 import { ThemeProvider } from "./contexts/ThemeContext.jsx";

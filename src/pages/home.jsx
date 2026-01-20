@@ -19,7 +19,7 @@ function Home() {
         <div className="container-main">
             <SectionNav value={tab} onChange={setTab} />
         </div>
-        <div className="grid grid-cols-12 gap-6 items-start">
+        <div className="grid grid-cols-12 gap-4 items-start">
           {/* Portfolio */}
           <div className="col-span-12 lg:col-span-9">
             <Portfolio tab={tab} />

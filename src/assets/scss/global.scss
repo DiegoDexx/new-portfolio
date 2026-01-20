@@ -7,6 +7,8 @@
 html {
   box-sizing: border-box;
   scroll-behavior: smooth;
+  /* Tipografía base fluida */
+  font-size: clamp(15px, 0.25vw + 15px, 17px);
 }
 
 *, *::before, *::after {
@@ -20,6 +22,8 @@ html, body, #root {
 body {
   background: #ffffff;
   color: #000;
+  /* Evitar barras horizontales accidentales */
+  overflow-x: clip;
 }
 
 .dark body {
@@ -29,8 +33,8 @@ body {
 
 body, input, button, textarea, select {
   font-family: 'Poppins', sans-serif;
-  font-size: 16px;
-  line-height: 1.5;
+  font-size: 1rem; /* hereda del html para ser fluido */
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -97,7 +101,9 @@ header {
 /* LAYOUT SYSTEM */
 .container-main {
   @apply w-full mx-auto px-4 sm:px-6 lg:px-8 xl:px-12;
-  width: min(92vw, 1320px);
+  /* Evitar overflow por vw + scrollbar */
+  max-width: 1320px;
+  width: 100%;
 }
 
 .container-md {
@@ -117,7 +123,7 @@ header {
   padding: 14px 2px;
   font-weight: 800;
   letter-spacing: 0.04em;
-  font-size: 0.95rem;
+  font-size: clamp(0.85rem, 0.6vw + 0.75rem, 0.95rem);
   opacity: 0.6;
   text-transform: uppercase;
   position: relative;
@@ -299,7 +305,7 @@ header {
   font-weight: 900;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  font-size: 0.95rem;
+  font-size: clamp(0.85rem, 0.6vw + 0.75rem, 0.95rem);
   opacity: 0.5;
 }
 
@@ -310,9 +316,9 @@ header {
 /* Timeline accent line */
 .exp-line {
   position: absolute;
-  left: 6px;
-  top: 6px;
-  bottom: -6px;
+  left: 3px;
+  top: 2px;
+  bottom: -2px;
   width: 2px;
   background: #F6339A;
   border-radius: 999px;
@@ -321,15 +327,49 @@ header {
 
 /* Small icon chip */
 .exp-icon {
-  width: 18px;
-  height: 18px;
+  width: clamp(16px, 1.3vw, 18px);
+  height: clamp(16px, 1.3vw, 18px);
   border-radius: 6px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.10);
-  font-size: 12px;
+  font-size: clamp(10px, 0.5vw + 9px, 12px);
+}
+
+/* =========================
+   SERVICES visual (gradients + sizes)
+   ========================= */
+.svc-card,
+.svc-maint {
+  /* Suave sombra para separar del fondo */
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* Gradientes por tono */
+.svc-card--pink,
+.svc-maint--pink {
+  background: linear-gradient(180deg, rgba(246, 51, 154, 0.14) 0%, rgba(246, 51, 154, 0.06) 100%);
+}
+.svc-card--purple,
+.svc-maint--purple {
+  background: linear-gradient(180deg, rgba(168, 85, 247, 0.16) 0%, rgba(168, 85, 247, 0.07) 100%);
+}
+.svc-card--blue,
+.svc-maint--blue {
+  background: linear-gradient(180deg, rgba(59, 130, 246, 0.16) 0%, rgba(59, 130, 246, 0.07) 100%);
+}
+
+/* Títulos y precio más protagonistas */
+.svc-card h4,
+.svc-maint h4 {
+  font-size: clamp(1.1rem, 0.6vw + 1rem, 1.4rem);
+}
+
+.svc-price {
+  font-size: clamp(1.9rem, 1.5vw + 1.6rem, 2.8rem);
+  line-height: 1.1;
 }
 
 
