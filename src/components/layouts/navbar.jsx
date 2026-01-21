@@ -185,9 +185,17 @@ const NavBar = () => {
 
               <div
                 className="navbar-mobile__pill flex items-center gap-2 px-3 py-2 rounded-xl bg-black text-white border border-black transition-colors duration-300"
+                title="Idioma"
               >
-                <span className="navbar-mobile__pill-icon text-white">🌐</span>
-                <span className="text-sm">Español</span>
+                <span className="navbar-mobile__pill-icon text-white ">🌐</span>
+                <select
+                  value={i18n.language}
+                  onChange={handleLanguageChange}
+                  className="bg-transparent border-none text-xs text-white focus:outline-none"
+                >
+                  <option value="es">Español</option>
+                  <option value="en">English</option>
+                </select>
               </div>
 
               <a
