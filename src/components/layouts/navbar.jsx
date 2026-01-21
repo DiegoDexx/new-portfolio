@@ -210,7 +210,7 @@ const NavBar = () => {
                 onClick={handleNav}
               >
                 <FaDownload />
-                {t("CV")} 
+                {t("CV", "CV")}
               </a>
 
               <button
@@ -218,12 +218,12 @@ const NavBar = () => {
                 onClick={handleOpenContact}
                 className="
                   inline-flex items-center gap-2 px-4 py-2 rounded-xl
-                  bg-[#F6339A] text-white text-sm font-semibold
+                  bg-[#F6339A] text-white text-xs font-semibold
                   hover:brightness-110 transition
                 "
               >
                 <FaEnvelope />
-                Contactar
+                
               </button>
             </div>
           </div>
