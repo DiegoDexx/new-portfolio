@@ -49,13 +49,14 @@ function MaintCard({ name, price, monthly, perMonth, features, tone, popular, se
       )}
 
       <div className="flex items-center justify-between gap-3">
-        <h4 className="text-lg font-medium">{name}</h4>
-        <span className={`svc-badge svc-badge--${tone}`}>{monthly}</span>
+        <h4 className="text-sm font-semibold">{name}</h4>
+        
       </div>
 
       <div className="mt-3 flex items-end gap-1">
         <div className="svc-price font-bold">{price}</div>
         <div className="text-sm opacity-65">{perMonth}</div>
+        <span className={`svc-badge svc-badge--${tone}`}>{monthly}</span>
       </div>
 
       <ul className="mt-5 flex flex-col gap-2.5">
@@ -69,7 +70,7 @@ function MaintCard({ name, price, monthly, perMonth, features, tone, popular, se
       <button
         type="button"
         onClick={onSelect}
-        className={`svc-select svc-select--${tone} mt-6 w-full rounded-xl py-3 text-sm font-semibold`}
+        className={`svc-select svc-select--${tone} mt-6 w-full rounded-xl py-3 text-sm font-semibold hover-scale cursor-pointer`}
       >
         {selectText}
       </button>

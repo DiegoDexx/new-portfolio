@@ -54,7 +54,7 @@ i18n
 
             "dev": {
               "basic": {
-                "name": "Basic",
+                "name": "Basic ",
                 "badge": "",
                 "desc": "Shopify One-Product Store or Landing Page",
                 "price": "100–150€",
@@ -66,7 +66,7 @@ i18n
                 ]
               },
               "pro": {
-                "name": "Professional",
+                "name": "Professional ",
                 "badge": "",
                 "desc": "Corporate website or standard online store",
                 "price": "200–450€",
@@ -79,7 +79,7 @@ i18n
                 ]
               },
               "enterprise": {
-                "name": "Enterprise",
+                "name": "Enterprise ",
                 "badge": "",
                 "desc": "Advanced website with SEO + Database & CRM",
                 "price": "500€+",
@@ -101,7 +101,7 @@ i18n
               "perMonth": "/month",
 
               "basic": {
-                "name": "Basic",
+                "name": "Basic Maintenance",
                 "price": "30€",
                 "features": [
                   "Security updates",
@@ -111,7 +111,7 @@ i18n
                 ]
               },
               "pro": {
-                "name": "Professional",
+                "name": "Professional Maintenance",
                 "price": "70€",
                 "features": [
                   "Everything in Basic",
@@ -123,7 +123,7 @@ i18n
                 ]
               },
               "premium": {
-                "name": "Premium",
+                "name": "Premium Maintenance",
                 "price": "150€",
                 "features": [
                   "Everything in Professional",
@@ -260,7 +260,7 @@ i18n
               "perMonth": "/mes",
 
               "basic": {
-                "name": "Básico",
+                "name": " Mantenimiento Básico",
                 "price": "30€",
                 "features": [
                   "Actualizaciones de seguridad",
@@ -270,7 +270,7 @@ i18n
                 ]
               },
               "pro": {
-                "name": "Profesional",
+                "name": "Mantenimiento Profesional",
                 "price": "70€",
                 "features": [
                   "Todo lo del plan Básico",
@@ -282,7 +282,7 @@ i18n
                 ]
               },
               "premium": {
-                "name": "Premium",
+                "name": "Mantenimiento Premium",
                 "price": "150€",
                 "features": [
                   "Todo lo del plan Profesional",
