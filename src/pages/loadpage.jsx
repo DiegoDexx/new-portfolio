@@ -1,8 +1,9 @@
 import { useMemo } from "react";
-import { useDarkMode } from "../contexts/DarkModeContext";
+import { useTheme } from "../contexts/ThemeContext";
 
 const LoadingPage = () => {
-	const { isDarkMode } = useDarkMode();
+	const { theme } = useTheme();
+	const isDarkMode = theme === "dark";
 
 	const size = 160;
 	const stroke = 8;
@@ -10,7 +11,7 @@ const LoadingPage = () => {
 	const circumference = useMemo(() => 2 * Math.PI * r, [r]);
 
 	return (
-		<div className="loading-page flex min-h-screen w-full flex-col items-center justify-center gap-4 bg-white text-black dark:bg-[#0b1b3a] dark:text-white">
+		<div className="loading-page bg-white text-black flex min-h-screen w-full flex-col items-center justify-center gap-4">
 			<div className="relative" style={{ width: size, height: size }}>
 				<div className="absolute inset-0 flex items-center justify-center">
 					<img
