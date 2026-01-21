@@ -128,7 +128,7 @@ const NavBar = () => {
                 onClick={handleOpenContact}
                 className="
                   inline-flex items-center gap-2 px-4 py-2 rounded-xl
-                  bg-[#F6339A] text-white text-sm font-semibold
+                  bg-[#F6339A] text-white text-sm font-semibold cursor-pointer  
                   hover:brightness-110 transition
                 "
               >

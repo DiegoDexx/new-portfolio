@@ -24,13 +24,16 @@ i18n
           "otherTechnologies": "Other technologies",
 
           "experience": {
+             "L1 Technician": "L1 Technician",
+            "Network Administrator": "Network Administrator",
             "WordPress Developer": "WordPress Developer",
             "Freelance Developer": "Freelance Developer",
             "Parking Attendant and Chauffeur": "Parking Attendant and Chauffeur",
-            "Computer Technician": "Computer Technician",
-            "Network Administrator": "Network Administrator"
+            "Computer Technician": "Computer Technician"
+            
           },
           "jobDescription": {
+            "L1Technician": "Provided first-level technical support, troubleshooting hardware and software issues for end-users.",
             "wordpressDeveloper": "I was working as an intern on a project about WordPress plugin implementations.",
             "freelanceDeveloper": "After obtaining my degree, I have been working freelance on various company and start-up projects.",
             "parkingAttendant": "I worked in a parking facility where I was responsible for parking cars and providing chauffeur services for clients.",
@@ -183,13 +186,16 @@ i18n
           "subtitle4": "Otras Experiencias",
 
           "experience": {
+            "L1 Technician": "Técnico de soporte L1",
+             "Network Administrator": "Administrador de Redes",
             "WordPress Developer": "Desarrollador de WordPress",
             "Freelance Developer": "Desarrollador Freelance",
             "Parking Attendant and Chauffeur": "Encargado de Estacionamiento y Chófer",
-            "Computer Technician": "Técnico de tienda de tecnología",
-            "Network Administrator": "Administrador de Redes"
+            "Computer Technician": "Técnico de tienda de tecnología"
+           
           },
           "jobDescription": {
+            "L1Technician": "Proporcioné soporte técnico de primer nivel, solucionando problemas de hardware y software para los usuarios finales.",
             "wordpressDeveloper": "Trabajé como becario en un proyecto sobre implementaciones de plugins de WordPress.",
             "freelanceDeveloper": "Después de obtener mi título, he estado trabajando como freelance en varios proyectos de empresas y startups.",
             "parkingAttendant": "Trabajé en un aparcamiento donde era responsable de estacionar coches y proporcionar servicios de chófer a los clientes.",

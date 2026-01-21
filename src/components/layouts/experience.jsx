@@ -37,20 +37,28 @@ export default function ExperiencePanel() {
   const professionalItems = useMemo(
     () => [
       {
-        title: t("experience.WordPress Developer"),
-        company: "Sweet Code Chef",
-        date: "March 2024 - June 2024",
-      },
+        title: t("experience.L1 Technician"),
+        company: "NTT DATA",
+        date: "Nov 2025 - Present",
+      }
+      ,
       {
+        title: t("experience.Network Administrator"),
+        company: "Inelcom",
+        date: "Nov 2024 - Nov 2025",
+      },
+        {
         title: t("experience.Freelance Developer"),
         company: "Freelance",
         date: "February 2024 - Present",
       },
       {
-        title: t("experience.Network Administrator"),
-        company: "Inacom",
-        date: "Nov 2024 - Present",
+        title: t("experience.WordPress Developer"),
+        company: "Sweet Code Chef",
+        date: "March 2024 - June 2024",
       },
+    
+ 
     ],
     [t]
   );
