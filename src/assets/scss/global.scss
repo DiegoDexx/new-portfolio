@@ -605,6 +605,44 @@ header {
 }
 
 /* =========================
+   LOADING PAGE (colors)
+   ========================= */
+
+.loading-ring__bg {
+  stroke: rgba(0, 0, 0, 0.08);
+}
+
+.loading-ring__progress {
+  stroke: #F6339A;
+  transform-origin: 50% 50%;
+  transform: rotate(-90deg);
+  animation: loading-ring 1.6s ease-in-out infinite;
+}
+
+.dark .loading-ring__bg {
+  stroke: rgba(255, 255, 255, 0.12);
+}
+
+.dark .loading-ring__progress {
+  stroke: #F6339A;
+}
+
+@keyframes loading-ring {
+  0% {
+    stroke-dashoffset: 1000;
+    opacity: 0.4;
+  }
+  50% {
+    stroke-dashoffset: 250;
+    opacity: 1;
+  }
+  100% {
+    stroke-dashoffset: 1000;
+    opacity: 0.4;
+  }
+}
+
+/* =========================
    PROJECT MODAL (dark)
    ========================= */
 
