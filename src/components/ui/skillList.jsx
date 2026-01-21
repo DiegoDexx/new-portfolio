@@ -1,6 +1,6 @@
 //import react-icon for each tecnology skill
 import { useTranslation } from "react-i18next";
-import { FaReact, FaJsSquare, FaLaravel, FaWordpress, FaAws } from "react-icons/fa";
+import { FaReact, FaJsSquare, FaLaravel, FaWordpress, FaAws, FaLinux, FaDocker } from "react-icons/fa";
 import { SiTailwindcss, SiShopify, SiMysql, SiPhp, SiSpringboot } from "react-icons/si";    
 
 
@@ -16,6 +16,8 @@ const skills = [
   { name: "PHP", level: 80 },
   { name: "Spring Boot", level: 80 },
   { name: "AWS", level: 80 },
+  { name: "Linux", level: 90 },
+  { name: "Docker", level: 70 },
 ];
 
 export default function SkillsList() {
@@ -38,6 +40,8 @@ export default function SkillsList() {
             {s.name === "PHP" && <SiPhp />}
             {s.name === "Spring Boot" && <SiSpringboot />}
             {s.name === "AWS" && <FaAws />}
+            {s.name === "Linux" && <FaLinux />}
+            {s.name === "Docker" && <FaDocker />}
               <span className="font-semibold flex-1 ">{s.name}</span>
               <span className="text-sm opacity-70">{s.level}%</span>
             </div>
