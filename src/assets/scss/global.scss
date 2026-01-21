@@ -50,6 +50,10 @@ body {
   color: #fff;
 }
 
+.dark, .dark * {
+  color: #fff;
+}
+
 body, input, button, textarea, select {
   font-family: 'Poppins', sans-serif;
   font-size: 1rem; /* hereda del html para ser fluido */
