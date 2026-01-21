@@ -1,5 +1,7 @@
+import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { FaCheck } from "react-icons/fa";
+import ModalContact from "./modalContact";
 
 function FeatureItem({ children, tone = "pink" }) {
   return (
@@ -14,7 +16,7 @@ function FeatureItem({ children, tone = "pink" }) {
 
 function DevPlanCard({ name, desc, price, features, tone }) {
   return (
-    <div className={`svc-card svc-card--${tone} rounded-2xl p-5 sm:p-6 hover-scale transition-transform duration-200`}>
+    <div className={`svc-card svc-card--${tone} rounded-2xl p-5 sm:p-6 hover-scale cursor-pointer`}>
       <div className="flex items-center gap-2">
         <span className={`svc-dot svc-dot--${tone}`} />
         <h4 className="text-lg font-medium">{name}</h4>
@@ -37,7 +39,7 @@ function DevPlanCard({ name, desc, price, features, tone }) {
   );
 }
 
-function MaintCard({ name, price, monthly, perMonth, features, tone, popular, selectText }) {
+function MaintCard({ name, price, monthly, perMonth, features, tone, popular, selectText, onSelect }) {
   return (
     <div className={`svc-card svc-card--${tone} rounded-2xl p-5 sm:p-6 hover-scale transition-transform duration-200`}>
       {popular && (
@@ -66,6 +68,7 @@ function MaintCard({ name, price, monthly, perMonth, features, tone, popular, se
 
       <button
         type="button"
+        onClick={onSelect}
         className={`svc-select svc-select--${tone} mt-6 w-full rounded-xl py-3 text-sm font-semibold`}
       >
         {selectText}
@@ -93,6 +96,9 @@ function ServiceList({ services }) {
 
 export default function Services() {
   const { t } = useTranslation();
+  const [contactOpen, setContactOpen] = useState(false);
+
+  const handleOpenContact = () => setContactOpen(true);
 
   const dev = {
     basic: {
@@ -143,6 +149,7 @@ export default function Services() {
   };
 
   return (
+    <>
     <div className="flex flex-col gap-10 ">
       {/* DEV */}
       <section>
@@ -161,18 +168,21 @@ export default function Services() {
             monthly={t("services.maintenance.monthly")}
             perMonth={t("services.maintenance.perMonth")}
             selectText={t("services.maintenance.select")}
+            onSelect={handleOpenContact}
           />
           <MaintCard
             {...maint.pro}
             monthly={t("services.maintenance.monthly")}
             perMonth={t("services.maintenance.perMonth")}
             selectText={t("services.maintenance.select")}
+            onSelect={handleOpenContact}
           />
           <MaintCard
             {...maint.premium}
             monthly={t("services.maintenance.monthly")}
             perMonth={t("services.maintenance.perMonth")}
             selectText={t("services.maintenance.select")}
+            onSelect={handleOpenContact}
           />
         </div>
 
@@ -180,6 +190,11 @@ export default function Services() {
           💡 <span className="font-semibold">{t("services.note")}</span>
         </div>
       </section>
+
+ 
     </div>
+    <ModalContact isOpen={contactOpen} onClose={() => setContactOpen(false)} />
+    </>
+    
   );
 }

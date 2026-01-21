@@ -100,16 +100,9 @@ header {
 /* Online dot */
 .profile-online {
   background: #00d26a;
-  border: 3px solid #ffffff; /* aro blanco constante */
+  border: 1px solid #ffffff; /* aro blanco constante */
   /* aro externo sutil para simular el halo de la imagen */
-  box-shadow: 0 0 0 8px rgba(255, 255, 255, 0.7), 0 6px 16px rgba(0, 0, 0, 0.2);
   z-index: 10; /* asegurar superposición sobre el avatar */
-}
-
-/* En modo dark mantenemos el aro blanco para que siempre destaque */
-.dark .profile-online {
-  border-color: #ffffff;
-  z-index: 10;
 }
 
 /* Social chips */
@@ -229,6 +222,26 @@ header {
 /* =========================
    PORTFOLIO PANEL (colors)
    ========================= */
+.portfolio-panel__content {
+  animation: portfolio-fade-slide 380ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  will-change: opacity, transform;
+}
+
+@keyframes portfolio-fade-slide {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .portfolio-panel__content {
+    animation: none;
+  }
+}
 /* =========================
    PROJECT CARD (colors)
    ========================= */
@@ -266,8 +279,25 @@ header {
   height: 100%;
   border-radius: 999px;
   background: linear-gradient(90deg, #F6339A 0%, #A855F7 100%);
+  width: 100%;
+  transform-origin: left;
+  transform: scaleX(var(--skill-level, 0));
+  animation: skill-fill 900ms cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
+@keyframes skill-fill {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(var(--skill-level, 2));
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .skill-bar__fill {
+    animation: none;
+  }
+}
 /* =========================
    SERVICES (colors only)
    ========================= */
@@ -399,18 +429,10 @@ header {
   color: inherit;
 }
 
-.svc-select:hover {
-  filter: brightness(1.08);
-}
-
 .svc-select--purple {
   background: #A855F7;
   border-color: #A855F7;
   color: #fff;
-}
-
-.svc-select--purple:hover {
-  filter: brightness(1.05);
 }
 
 /* =========================
@@ -565,6 +587,108 @@ header {
 /* =========================
    FOOTER (theme + dark)
    ========================= */
+/* =========================
+   NAVBAR MOBILE (dark)
+   ========================= */
+.dark .navbar-mobile {
+  background: #181827;
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.dark .navbar-mobile__link {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.dark .navbar-mobile__link:hover {
+  color: #fff;
+}
+
+.dark .navbar-mobile__pill {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.12);
+  color: #fff;
+}
+
+.dark .navbar-mobile__pill-icon {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.dark button select {
+  background: #181827;
+  color: #ffffff;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.12);
+}
+
+.dark button svg {
+  color: #ffffff;
+}
+
+/* =========================
+   MODAL CONTACT (dark)
+   ========================= */
+.dark .modal-contact__panel {
+  background: #181827; /* fondo principal dark */
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.dark .modal-contact__panel h4 {
+  color: #ffffff;
+}
+
+.dark .modal-contact__close {
+  background: #181827; /* fondo principal dark */
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.dark .modal-contact__input {
+  background: #343453; /* fondo principal dark */
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.dark .modal-contact form label {
+  color: #ffffff;
+}
+
+.dark .modal-contact__input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* =========================
+   PROJECT MODAL (dark)
+   ========================= */
+.dark .project-modal__panel {
+  background: #181827; /* fondo principal dark */
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.dark .project-modal__close {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+}
+
+.dark .project-modal__meta {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.dark .project-modal__chip {
+  background: rgba(246, 51, 154, 0.16);
+  border-color: rgba(246, 51, 154, 0.4);
+  color: #FAD1E6;
+}
+
+.dark .project-modal__secondary {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.16);
+  color: #ffffff;
+}
+
 .dark footer {
   background: #181827; /* fondo principal dark */
   color: rgba(255, 255, 255, 0.95);
@@ -637,10 +761,6 @@ header {
   background-color: #f9f9f9;
   border: 1px solid #e0e0e0;
   transition: background-color 0.3s;
-}
-
-.svc-card:hover {
-  background-color: #f1f1f1;
 }
 
 .svc-check {

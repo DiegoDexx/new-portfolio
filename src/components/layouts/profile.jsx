@@ -25,20 +25,33 @@ export default function Profile() {
   " 
 >
 
-        {/* Avatar */}
-        <div className="relative shrink-0">
-          <div className="profile-avatar rounded-2xl overflow-hidden w-28 h-28 sm:w-32 sm:h-32">
-            <img
-              src={avatarSrc}
-              alt={name}
-              className="w-full h-full object-cover"
-              loading="lazy"
-            />
-          </div>
+    {/* Avatar */}
+    <div className="relative shrink-0 mx-auto">
+      <div className="profile-avatar rounded-2xl overflow-hidden
+                      w-32 h-32 sm:w-40 sm:h-40 lg:w-42 lg:h-42">
+        <img
+          src={avatarSrc}
+          alt={name}
+          className="w-full h-full object-cover"
+          loading="lazy"
+        />
+      </div>
 
-          {/* Online dot */}
-          <span className="profile-online absolute -bottom-2 -right-2 w-7 h-7 rounded-full z-10" />
-        </div>
+      {/* Online dot */}
+      <span
+        className="
+          profile-online
+          absolute
+          right-0 bottom-0 sm:bottom-8
+          translate-x-1/4 translate-y-1/4
+          w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7
+          rounded-full
+          z-10
+          md:border-4 md:bottom-8 
+        "
+      />
+    </div>
+
 
         {/* Content */}
         <div className="flex-1 min-w-0">

@@ -12,9 +12,11 @@ export default function Portfolio({tab}) {
        <div className="w-full lg:w-[95%]">
 
           <div className="portfolio-panel p-5 sm:p-7 rounded-3xl">
-            {tab === "projects" && <ProjectsList />}
-            {tab === "skills" && <SkillsList />}
-            {tab === "services" && <ServiceList />}
+            <div key={tab} className="portfolio-panel__content">
+              {tab === "projects" && <ProjectsList />}
+              {tab === "skills" && <SkillsList />}
+              {tab === "services" && <ServiceList />}
+            </div>
           </div>
         </div>
     

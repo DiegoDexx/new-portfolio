@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
-import { FaBars, FaDownload, FaTimes } from "react-icons/fa";
+import { FaBars, FaDownload, FaEnvelope, FaTimes } from "react-icons/fa";
 import ChangeTheme from "../ui/changeTheme";
+import ModalContact from "../ui/modalContact.jsx";
 //importar i118n
 import { useTranslation } from "react-i18next";
 import "../../i118n";
@@ -9,6 +10,7 @@ const curriculum = "/files/CV_Diego2026.pdf";
 
 const NavBar = () => {
   const [open, setOpen] = useState(false);
+  const [contactOpen, setContactOpen] = useState(false);
   const menuRef = useRef(null);
   const { t, i18n } = useTranslation();
 
@@ -25,8 +27,13 @@ const NavBar = () => {
   }, []);
 
   const handleNav = () => setOpen(false);
+  const handleOpenContact = () => {
+    setContactOpen(true);
+    setOpen(false);
+  };
 
   return (
+    <>
     <header
       className="
       container-main
@@ -93,7 +100,7 @@ const NavBar = () => {
                 <select
                   value={i18n.language}
                   onChange={handleLanguageChange}
-                  className="bg-transparent border-none text-sm text-black/70 dark:text-white/80 focus:outline-none"
+                  className="bg-transparent border-none text-sm text-black/70 focus:outline-none"
                 >
                   <option value="es">Español</option>
                   <option value="en">English</option>
@@ -107,13 +114,27 @@ const NavBar = () => {
                 rel="noreferrer"
                 className="
                   inline-flex items-center gap-2 px-4 py-2 rounded-xl
+                  border border-[#F6339A] text-[#F6339A] text-sm font-semibold
+                  hover:bg-[#F6339A] hover:text-white transition
+                "
+              >
+                <FaDownload />
+                {t("CV")}
+              </a>
+
+              {/* CTA Contact */}
+              <button
+                type="button"
+                onClick={handleOpenContact}
+                className="
+                  inline-flex items-center gap-2 px-4 py-2 rounded-xl
                   bg-[#F6339A] text-white text-sm font-semibold
                   hover:brightness-110 transition
                 "
               >
-                <FaDownload />
-                {t("downloadCV")}
-              </a>
+                <FaEnvelope />
+                {t("contact", "Contactar")}
+              </button>
             </div>
           </nav>
 
@@ -122,14 +143,14 @@ const NavBar = () => {
             type="button"
             className="
               md:hidden w-10 h-10 rounded-xl
-              bg-black/5 hover:bg-black/10 border border-black/10
-              dark:bg-white/10 dark:hover:bg-white/15 dark:border-white/10
+              bg-black/5 hover:bg-black/10 shadow-md
+              text-dark/80 hover:text-dark/100
               flex items-center justify-center transition
             "
             onClick={() => setOpen((v) => !v)}
             aria-label={open ? "Cerrar menú" : "Abrir menú"}
           >
-            {open ? <FaTimes className="text-black dark:text-white" /> : <FaBars className="text-black dark:text-white" />}
+              {open ? <FaTimes /> : <FaBars className="w-6 h-6" />}
           </button>
         </div>
       </div>
@@ -138,18 +159,12 @@ const NavBar = () => {
       {open && (
         <div
           ref={menuRef}
-          className="
-            md:hidden
-            border-t border-black/10 dark:border-white/10
-            bg-white dark:bg-[#181827]
-            text-black dark:text-white
-            transition-colors duration-300
-          "
+          className="navbar-mobile md:hidden border-t border-black/10 bg-white text-black transition-colors duration-300"
         >
           <div className="container-main py-4 flex flex-col gap-3">
             <a
               href="/"
-              className="text-black/80 hover:text-black dark:text-white/90 dark:hover:text-white text-sm font-medium transition"
+              className="navbar-mobile__link text-black/80 hover:text-black text-sm font-medium transition"
               onClick={handleNav}
             >
               Home
@@ -159,7 +174,7 @@ const NavBar = () => {
               href="https://oryonlabs.net"
               target="_blank"
               rel="noreferrer"
-              className="text-black/80 hover:text-black dark:text-white/90 dark:hover:text-white text-sm font-medium transition"
+              className="navbar-mobile__link text-black/80 hover:text-black text-sm font-medium transition"
               onClick={handleNav}
             >
               Oryon Labs
@@ -169,14 +184,9 @@ const NavBar = () => {
               <ChangeTheme />
 
               <div
-                className="
-                  flex items-center gap-2 px-3 py-2 rounded-xl
-                  bg-black/5 border border-black/10
-                  dark:bg-white/10 dark:border-white/10
-                  transition-colors duration-300
-                "
+                className="navbar-mobile__pill flex items-center gap-2 px-3 py-2 rounded-xl bg-black text-white border border-black transition-colors duration-300"
               >
-                <span className="text-black/70 dark:text-white/80">🌐</span>
+                <span className="navbar-mobile__pill-icon text-white">🌐</span>
                 <span className="text-sm">Español</span>
               </div>
 
@@ -186,19 +196,40 @@ const NavBar = () => {
                 rel="noreferrer"
                 className="
                   ml-auto inline-flex items-center gap-2 px-4 py-2 rounded-xl
-                  bg-[#F6339A] text-white text-sm font-semibold
-                  hover:brightness-110 transition
+                  border border-[#F6339A] text-[#F6339A] text-sm font-semibold
+                  hover:bg-[#F6339A] hover:text-white transition
                 "
                 onClick={handleNav}
               >
                 <FaDownload />
-                Download CV
+                {t("CV")} 
               </a>
+
+              <button
+                type="button"
+                onClick={handleOpenContact}
+                className="
+                  inline-flex items-center gap-2 px-4 py-2 rounded-xl
+                  bg-[#F6339A] text-white text-sm font-semibold
+                  hover:brightness-110 transition
+                "
+              >
+                <FaEnvelope />
+                Contactar
+              </button>
             </div>
           </div>
         </div>
       )}
+
+    
     </header>
+
+      <ModalContact
+        isOpen={contactOpen}
+        onClose={() => setContactOpen(false)}
+      />
+      </>
   );
 };
 

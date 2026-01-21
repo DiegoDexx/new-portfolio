@@ -14,7 +14,7 @@ i18n
           "menuTitle3": "PROFESSIONAL",
           "menuTitle4": "OTHER",
           "menuTitle5": "MY SERVICES",
-          "downloadCV": "Download CV",
+          "downloadCV": " CV",
 
           "Technical Skills": "Technical Skills",
           "subtitle3": "Professional Experience",
@@ -176,7 +176,7 @@ i18n
           "menuTitle3": "PROFESIONAL",
           "menuTitle4": "OTROS",
           "menuTitle5": "MIS SERVICIOS",
-            "downloadCV": "Descargar CV",
+            "downloadCV": " CV",
           "Technical Skills": "Habilidades Técnicas",
 
           "subtitle3": "Experiencia Profesional",

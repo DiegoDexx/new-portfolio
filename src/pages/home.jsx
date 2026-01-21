@@ -8,6 +8,10 @@ import Footer from "../components/layouts/footer";
 
 function Home() {
       const [tab, setTab] = useState("projects");
+
+      
+
+
   return (
     <>
       <NavBar />

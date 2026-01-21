@@ -45,7 +45,7 @@ export default function SkillsList() {
             <div className="skill-bar">
               <div
                 className="skill-bar__fill"
-                style={{ width: `${s.level}%` }}
+                  style={{ "--skill-level": s.level / 100 }}
                 aria-label={`${s.name} ${s.level}%`}
               />
             </div>
