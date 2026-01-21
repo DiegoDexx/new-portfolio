@@ -664,7 +664,7 @@ header {
    LOADING PAGE (colors)
    ========================= */
 .dark .loading-page {
-  background: #0b1b3a;
+  background: #181827; /* fondo principal dark */
   color: #ffffff;
 }
 
